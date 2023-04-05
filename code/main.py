@@ -7,6 +7,7 @@ import keras
 import tensorflow as tf
 import data_reader
 import matplotlib.pyplot as plt
+import matplotlib
 import cv2
 import os
 import sklearn
@@ -28,7 +29,6 @@ data_reader = data_reader.data_reader(data_dir)
 file_names, y_data, train_val_test_idication, labels = data_reader.get_data_info(label_path)
 X_data_train, Y_data_train, X_data_val, Y_data_val, X_data_test, Y_data_test = data_reader.get_data_set(y_data, file_names, train_val_test_idication, data_dir)
 
-print(to_categorical(Y_data_train))
 ##------------------------Analysis--------------------------------
 
 # Check sizes of dataset
@@ -60,9 +60,9 @@ if(show_analytics):
 
 # Normalize data
 
-preprocess.preprocess(X_data_train, Y_data_train)
-preprocess.preprocess(X_data_val, Y_data_val)
-preprocess.preprocess(X_data_test, Y_data_test)
+X_data_train, Y_data_train = preprocess.preprocess(X_data_train, Y_data_train)
+X_data_val, Y_data_val = preprocess.preprocess(X_data_val, Y_data_val)
+X_data_test, Y_data_test = preprocess.preprocess(X_data_test, Y_data_test)
 
 #resolution
 img_rows, img_cols, channels = X_data_train.shape[1:][0], X_data_train.shape[1:][1], X_data_train.shape[1:][2]
@@ -102,8 +102,7 @@ print('test accuracy:', score[1])
 
 ##Store Plots
 
-plt.use('Agg')
-import matplotlib.pyplot as plt
+matplotlib.use('Agg')
 #Accuracy plot
 plt.plot(history.history['accuracy'])
 plt.plot(history.history['val_accuracy'])
@@ -124,7 +123,6 @@ plt.savefig('mnist_fnn_loss.pdf')
 
 #Confusion Matrix
 from sklearn.metrics import classification_report,confusion_matrix
-import numpy as np
 #Compute probabilities
 Y_pred = model.predict(X_data_test)
 #Assign most probable label
