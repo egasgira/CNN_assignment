@@ -16,7 +16,7 @@ from sklearn.preprocessing import OneHotEncoder
 from keras.utils import to_categorical
 import preprocess
 
-# Choose what to do
+# Choose what you want to adjust
 show_analytics = True
 clear_session()
 
