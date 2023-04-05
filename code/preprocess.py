@@ -1,18 +1,5 @@
 from __future__ import division
-import os
-import pandas as pd
-from PIL import Image
 import numpy as np
-import keras
-import tensorflow as tf
-import data_reader
-import matplotlib.pyplot as plt
-import cv2
-import os
-import sklearn
-from keras.backend import clear_session
-from sklearn.preprocessing import OneHotEncoder
-from keras.utils import to_categorical
 from keras.utils import np_utils
 
 def preprocess(x_data, y_data):

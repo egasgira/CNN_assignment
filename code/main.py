@@ -17,11 +17,10 @@ from keras.utils import to_categorical
 import preprocess
 
 # Choose what to do
-show_analytics = False
-
+show_analytics = True
 clear_session()
 
-data_dir = os.path.dirname(os.getcwd()) + "\Datasets\\"
+data_dir = os.path.join(os.path.dirname(os.getcwd()), "datasets")
 label_path = ['MAMe_toy_dataset.csv', 'MAMe_dataset.csv'][0]
 
 data_reader = data_reader.data_reader(data_dir)

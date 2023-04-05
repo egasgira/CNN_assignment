@@ -15,17 +15,17 @@ class data_reader:
         print('\n############### CSV FILES ###############\n')
 
         # Upload the csv files of the directory
-        dir_path = self.dir_path + 'MAMe_metadata\\'
+        dir_path = os.path.join(self.dir_path, 'MAMe_metadata')
         files = os.listdir(dir_path)
 
         print('MAMe_metadata directory uploaded successfully.')
         print('The files are: ', files)
         # Read the CSV file with the data indexing of the label names
-        df_names = pd.read_csv(dir_path + 'MAMe_labels.csv',header=None)
+        df_names = pd.read_csv(os.path.join(dir_path, 'MAMe_labels.csv'),header=None)
         label_names = df_names[1]
 
         # Read the CSV file with the data (MAMe_dataset.csv)
-        df = pd.read_csv(dir_path + label_path)# + files[2])
+        df = pd.read_csv(os.path.join(dir_path, label_path))# + files[2])
         df = df.sample(frac=1, random_state=100).reset_index(drop=True)
         file_name = df['Image file'].to_numpy()
         file_label = df['Medium'].to_numpy()
@@ -48,7 +48,7 @@ class data_reader:
 
         # Upload the jpeg and jpg files of the directory
 
-        dir_path = dir_path + "data_256\\"
+        dir_path = os.path.join(dir_path, "data_256")
         files = os.listdir(dir_path)
 
         print('data_256 directory uploaded successfully.')
@@ -72,13 +72,13 @@ class data_reader:
         # Loop through the image files in the directory
         for image_file, y_label, subset_name in zip(file_names, file_label, file_subset):
             if subset_name == 'train':
-                X_data_train.append(np.array(cv2.imread(dir_path + image_file)))
+                X_data_train.append(np.array(cv2.imread(os.path.join(dir_path, image_file))))
                 Y_data_train.append(y_label)
             elif subset_name == 'val':
-                X_data_val.append(np.array(cv2.imread(dir_path + image_file)))
+                X_data_val.append(np.array(cv2.imread(os.path.join(dir_path, image_file))))
                 Y_data_val.append(y_label)
             else:
-                X_data_test.append(np.array(cv2.imread(dir_path + image_file)))
+                X_data_test.append(np.array(cv2.imread(os.path.join(dir_path, image_file))))
                 Y_data_test.append(y_label)
 
         # Print shape
