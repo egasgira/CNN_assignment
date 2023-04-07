@@ -62,3 +62,23 @@ test acc = 0.44068965315818787
 ###################################################################################
 ###################################################################################
 ###################################################################################
+model = Sequential()
+model.add(Conv2D(32, (3, 3), activation='gelu', input_shape=input_shape, padding="same"))
+model.add(Conv2D(32, 3, 3, activation='gelu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(64, 3, 3, activation='gelu', padding="same"))
+model.add(Conv2D(64, 3, 3, activation='gelu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(128, 3, 3, activation='gelu', padding="same"))
+model.add(Conv2D(128, 3, 3, activation='gelu', padding="same"))
+#model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Flatten())
+model.add(Dense(128, activation='gelu'))
+model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
+
+epochs = 50
+train acc = 0.9938
+test acc = 0.3641379177570343
+###################################################################################
+###################################################################################
+###################################################################################
