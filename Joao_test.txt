@@ -2,63 +2,73 @@
 ###################################################################################
 ###################################################################################
 model = Sequential()
-model.add(Conv2D(8, (3, 3), activation='relu', input_shape=input_shape))
-model.add(MaxPooling2D(pool_size=(2, 2)))
-model.add(Conv2D(16, 3, 3, activation='relu'))
-model.add(MaxPooling2D(pool_size=(2, 2)))
-model.add(Conv2D(32, 3, 3, activation='relu'))
+model.add(Conv2D(32, (3, 3), activation='relu', input_shape=input_shape))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Conv2D(64, 3, 3, activation='relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(128, 3, 3, activation='relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Flatten())
-model.add(Dense(128, activation='relu'))
+model.add(Dense(256, activation='relu'))
 model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
-epochs = 50
-train acc = 0.9641
-test acc = 0.408965528011322
+epochs = 30
+train acc = 1
+test acc = 0.600370466709137
 
-epochs = 20
-train acc = 0.6386
-test acc = 0.3855172395706177
+WITH padding
+epochs = 30
+train acc = 1
+test acc = 0.5985820889472961
 ###################################################################################
 ###################################################################################
 ###################################################################################
+A DEEPER MODEL
+
 model = Sequential()
-model.add(Conv2D(8, (3, 3), activation='relu', input_shape=input_shape))
+model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-model.add(Conv2D(16, 3, 3, activation='relu'))
+model.add(Conv2D(32, (3, 3), activation='relu', padding = "same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-model.add(Conv2D(32, 3, 3, activation='relu'))
+model.add(Conv2D(64, 3, 3, activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(128, 3, 3, activation='relu', padding="same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Flatten())
-model.add(Dense(64, activation='relu'))
+model.add(Dense(256, activation='relu'))
 model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
-epochs = 50
-train acc = 0.7048
-test acc = 0.3737930953502655
+epochs = 30
+train acc = 0.97
+test acc = 0.6102701425552368
 
-epochs = 20
-train acc = 0.4876
-test acc = 0.32275861501693726
+a bit more of overfit
+epochs = 35
+train acc = 0.984
+test acc = 0.608928918838501
 ###################################################################################
 ###################################################################################
 ###################################################################################
+EVEN DEEPER
+
 model = Sequential()
-model.add(Conv2D(32, (3, 3), activation='gelu', input_shape=input_shape))
+model.add(Conv2D(8, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-model.add(Conv2D(64, 3, 3, activation='gelu'))
+model.add(Conv2D(16, (3, 3), activation='relu', padding = "same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-model.add(Conv2D(128, 3, 3, activation='gelu'))
+model.add(Conv2D(32, (3, 3), activation='relu', padding = "same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(64, 3, 3, activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(128, 3, 3, activation='relu', padding="same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Flatten())
-model.add(Dense(256, activation='gelu'))
+model.add(Dense(256, activation='relu'))
 model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
-epochs = 50
-train acc = 0.9972
-test acc = 0.44068965315818787
+epochs = 35
+train acc = 0.95
+test acc = 0.5483809113502502
 ###################################################################################
 ###################################################################################
 ###################################################################################
@@ -76,9 +86,10 @@ model.add(Flatten())
 model.add(Dense(128, activation='gelu'))
 model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
-epochs = 50
-train acc = 0.9938
-test acc = 0.3641379177570343
+epochs = 30
+train acc = 
+test acc = 
+
 ###################################################################################
 ###################################################################################
 ###################################################################################
