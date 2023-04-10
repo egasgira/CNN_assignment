@@ -1,1 +1,171 @@
+model = Sequential()
+model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, paddin$
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(32, (3, 3), activation='relu', padding = "same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(64, 3, 3, activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(128, 3, 3, activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.5))
+model.add(Flatten())
+model.add(Dense(256, activation='relu'))
+model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
+
+epochs = 100
+train acc = 
+test acc = 
+
+##############################################################################
+##############################################################################
+##############################################################################
+main.py
+Submitted batch job 
+model = Sequential()
+model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(32, (3, 3), activation='relu', padding = "same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.1))
+model.add(Conv2D(64, 3, 3, activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.3))
+model.add(Conv2D(128, 3, 3, activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.5))
+model.add(Flatten())
+model.add(Dense(256, activation='relu'))
+model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
+
+epochs = 100
+train acc = 
+test acc = 
+
+##############################################################################
+##############################################################################
+##############################################################################
+main1.py
+Submitted batch job 
+model = Sequential()
+model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(32, (3, 3), activation='relu', padding = "same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.2))
+model.add(Conv2D(64, 3, 3, activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.4))
+model.add(Conv2D(128, 3, 3, activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.6))
+model.add(Flatten())
+model.add(Dense(256, activation='relu'))
+model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
+
+epochs = 100
+train acc = 
+test acc = 
+
+##############################################################################
+##############################################################################
+##############################################################################
+main2.py
+Submitted batch job 
+model = Sequential()
+model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.1))
+model.add(Conv2D(32, (3, 3), activation='relu', padding = "same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.2))
+model.add(Conv2D(64, 3, 3, activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.4))
+model.add(Conv2D(128, 3, 3, activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.6))
+model.add(Flatten())
+model.add(Dense(256, activation='relu'))
+model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
+
+epochs = 100
+train acc = 
+test acc = 
+
+##############################################################################
+##############################################################################
+##############################################################################
+main3.py
+Submitted batch job 
+model = Sequential()
+model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.1))
+model.add(Conv2D(32, (3, 3), activation='relu', padding = "same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.2))
+model.add(Conv2D(64, 3, 3, activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.4))
+model.add(Conv2D(128, 3, 3, activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.7))
+model.add(Flatten())
+model.add(Dense(256, activation='relu'))
+model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
+
+epochs = 100
+train acc = 
+test acc = 
+
+##############################################################################
+##############################################################################
+##############################################################################
+main4.py
+Submitted batch job 
+model = Sequential()
+model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.2))
+model.add(Conv2D(32, (3, 3), activation='relu', padding = "same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.3))
+model.add(Conv2D(64, 3, 3, activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.5))
+model.add(Conv2D(128, 3, 3, activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.8))
+model.add(Flatten())
+model.add(Dense(256, activation='relu'))
+model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
+
+epochs = 100
+train acc = 
+test acc = 
+
+##############################################################################
+##############################################################################
+##############################################################################
+main5.py
+Submitted batch job 
+model = Sequential()
+model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(32, (3, 3), activation='relu', padding = "same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.3))
+model.add(Conv2D(64, 3, 3, activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.5))
+model.add(Conv2D(128, 3, 3, activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.7))
+model.add(Flatten())
+model.add(Dense(256, activation='relu'))
+model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
+
+epochs = 100
+train acc = 
+test acc = 
 
