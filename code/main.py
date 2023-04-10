@@ -71,15 +71,24 @@ input_shape = (img_rows, img_cols, channels)
 
 #Define the NN architecture
 from keras.models import Sequential
-from keras.layers import Dense, Activation, Conv2D, MaxPooling2D, Flatten
+from keras.layers import Dense, Activation, Conv2D, MaxPooling2D, Flatten, Dropout
 #Two hidden layers
 model = Sequential()
-model.add(Conv2D(8, (3, 3), activation='relu', input_shape=input_shape))
+model.add(Conv2D(32, (3, 3), activation='relu',  padding="same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-model.add(Conv2D(16, 3, 3, activation='relu'))
-model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.2))
+model.add(Conv2D(64, (3, 3), activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(2, 2) ))
+model.add(Dropout(0.3))
+model.add(Conv2D(128, (2, 2), activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(3, 3)))
+model.add(Dropout(0.4))
+model.add(Conv2D(256, (3, 3), activation='relu', padding="same"))
+model.add(MaxPooling2D(pool_size=(3, 3)))
+model.add(Dropout(0.5))
 model.add(Flatten())
-model.add(Dense(8, activation='relu'))
+model.add(Dense(1000, activation='relu'))
+model.add(Dropout(0.6))
 model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
 #Model visualization
