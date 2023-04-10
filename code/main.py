@@ -45,7 +45,6 @@ if(show_analytics):
                                 axes[i, j].imshow(X_data_train[indx])
                                 axes[i, j].axis("off")
                                 axes[i, j].set_title(f"label: {label}")
-                #plt.tight_layout()
                 plt.show()
 
         plt.title("Distribution of classes")
@@ -90,7 +89,7 @@ model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
 #Compile the NN
 model.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])
-
+model.summary()
 #Start training
 history = model.fit(X_data_train,Y_data_train,batch_size=64,epochs=20, validation_data=(X_data_val, Y_data_val))
 

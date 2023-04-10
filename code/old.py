@@ -5,7 +5,7 @@ from PIL import Image
 import numpy as np
 import keras
 import tensorflow as tf
-from keras.callbacks import EarlyStopping
+
 import matplotlib.pyplot as plt
 import matplotlib
 import cv2
@@ -14,14 +14,11 @@ import sklearn
 from keras.backend import clear_session
 from sklearn.preprocessing import OneHotEncoder
 from keras.utils import to_categorical
-from keras.callbacks import EarlyStopping
+
 
 # Choose what to do
 show_analytics = False
-clear_session()
-environment = ["cluster", "colab"][1]
-!git clone https://github.com/egasgira/CNN_assignment.git # Uncomment this if colab is used
-
+environment = ["cluster", "colab"][0]
 data_dir = os.path.join(os.path.dirname(os.getcwd()), "datasets")
 label_path = ['MAMe_toy_dataset.csv', 'MAMe_dataset.csv'][0]
 
@@ -30,20 +27,23 @@ label_path = ['MAMe_toy_dataset.csv', 'MAMe_dataset.csv'][0]
 
 
 ##------------------------Preprocess--------------------------------
+clear_session()
 if environment == "colab":
-  import sys
-  sys.path.append('/content/CNN_assignment/code')
-  import CNN_assignment.code.data_reader as data_reader
-  import CNN_assignment.code.preprocess as preprocess
-  data_dir = "/content/CNN_assignment/datasets"
+    import sys
+    exec("!git clone https://github.com/egasgira/CNN_assignment.git")
+    sys.path.append('/content/CNN_assignment/code')
+    print("change environment")
+    import CNN_assignment.code.data_reader as data_reader
+    import CNN_assignment.code.preprocess as preprocess
+    data_dir = "/content/CNN_assignment/datasets"
 else:
-  import data_reader
-  import preprocess
-  data_dir = os.path.join(os.path.dirname(os.getcwd()), "datasets")
+    import data_reader
+    import preprocess
+    data_dir = os.path.join(os.path.dirname(os.getcwd()), "datasets")
 
-dr = data_reader.data_reader(data_dir)
-file_names, y_data, train_val_test_idication, labels = dr.get_data_info(label_path)
-X_data_train, Y_data_train, X_data_val, Y_data_val, X_data_test, Y_data_test = dr.get_data_set(y_data, file_names, train_val_test_idication, data_dir)
+data_reader = data_reader.data_reader(data_dir)
+file_names, y_data, train_val_test_idication, labels = data_reader.get_data_info(label_path)
+X_data_train, Y_data_train, X_data_val, Y_data_val, X_data_test, Y_data_test = data_reader.get_data_set(y_data, file_names, train_val_test_idication, data_dir)
 
 
 ##------------------------Analysis--------------------------------
@@ -109,10 +109,8 @@ model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 #Compile the NN
 model.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])
 
-
 #Start training
-es = EarlyStopping(patience=10,  restore_best_weights=True, monitor="val_loss")
-history = model.fit(X_data_train,Y_data_train,batch_size=64,epochs=40,validation_data=(X_data_val, Y_data_val), callbacks=[es])
+history = model.fit(X_data_train,Y_data_train,batch_size=64,epochs=20, validation_data=(X_data_val, Y_data_val))
 
 #Evaluate the model with test set
 score = model.evaluate(X_data_test, Y_data_test, verbose=0)
