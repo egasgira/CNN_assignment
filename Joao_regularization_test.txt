@@ -20,7 +20,7 @@ test acc = 0.6062464118003845
 ##############################################################################
 ##############################################################################
 main.py
-Submitted batch job 6851797
+Submitted batch job 6852520
 model = Sequential()
 model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -38,8 +38,8 @@ model.add(Dense(256, activation='relu'))
 model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
 epochs = 30
-train acc = 
-test acc = 
+train acc = 0.6719
+test acc = 0.6823146343231201
 
 ##############################################################################
 ##############################################################################
@@ -63,8 +63,8 @@ model.add(Dense(256, activation='relu'))
 model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
 epochs = 30
-train acc = 
-test acc = 
+train acc = 0.6719
+test acc = 0.6535734534263611
 
 ##############################################################################
 ##############################################################################
@@ -89,8 +89,8 @@ model.add(Dense(256, activation='relu'))
 model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
 epochs = 30
-train acc = 
-test acc = 
+train acc = 0.6406
+test acc = 0.6605991125106812
 
 ##############################################################################
 ##############################################################################
@@ -115,14 +115,14 @@ model.add(Dense(256, activation='relu'))
 model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
 epochs = 30
-train acc = 
-test acc = 
+train acc = 0.5938
+test acc = 0.6250239610671997
 
 ##############################################################################
 ##############################################################################
 ##############################################################################
 main4.py
-Submitted batch job 6851801
+Submitted batch job 6852576
 model = Sequential()
 model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -141,8 +141,8 @@ model.add(Dense(256, activation='relu'))
 model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
 epochs = 30
-train acc = 
-test acc = 
+train acc = 0.546
+test acc = 0.5357348322868347
 
 ##############################################################################
 ##############################################################################
@@ -166,5 +166,5 @@ model.add(Dense(256, activation='relu'))
 model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
 epochs = 30
-train acc = 
-test acc = 
+train acc = 0.5156
+test acc = 0.6100785732269287
