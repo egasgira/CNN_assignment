@@ -169,6 +169,31 @@ with open('model.json', 'w') as json_file:
 weights_file = "weights-MNIST_"+str(score[1])+".hdf5"
 model.save_weights(weights_file,overwrite=True)
 
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+
+def save_cm(model, X_val, y_val, cm_filename, lc_filename):
+    # Prediction
+    predictions = model.predict(X_val)
+    # Select for each observation the highest probability
+    predictions = np.argmax(predictions, axis=1)
+    real = np.argmax(y_val, axis=1)
+    # Confusion matrix
+    confusionMatrix = confusion_matrix(real, predictions, normalize="true")
+
+    #print(pd.DataFrame(confusionMatrix, columns=labels, index=labels))
+    cmd = ConfusionMatrixDisplay(confusionMatrix, display_labels=labels.values)
+    fig, ax = plt.subplots()
+    cmd.plot(ax=ax)
+    fig.set_figheight(13)
+    fig.set_figwidth(14)
+    plt.xticks(rotation=90)
+
+    plt.savefig(cm_filename)
+    plt.close()
+# Usage example
+# Assume `model` is a trained Keras model, and X_train, y_train, X_val, y_val are the input data and true labels
+save_cm(model, X_data_val, Y_data_val, "confusion_matrix.png", labels)
+
 #Loading model and weights
 #json_file = open('model.json','r')
 #model_json = json_file.read()
