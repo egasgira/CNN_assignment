@@ -44,9 +44,9 @@ model.add(Flatten())
 model.add(Dense(256, activation='relu'))
 model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
-epochs = 100
-train acc = 
-test acc = 
+epochs = 100 (stoped at 77)
+train acc = 0.7344
+test acc = 0.695216178894043
 
 ##############################################################################
 ##############################################################################
@@ -70,9 +70,9 @@ model.add(Flatten())
 model.add(Dense(256, activation='relu'))
 model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
-epochs = 100
-train acc = 
-test acc = 
+epochs = 100 (stoped at 66)
+train acc = 0.6719
+test acc = 0.6864660978317261
 
 ##############################################################################
 ##############################################################################
@@ -96,9 +96,9 @@ model.add(Flatten())
 model.add(Dense(256, activation='relu'))
 model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
-epochs = 100
-train acc = 
-test acc = 
+epochs = 100 (stoped at 92)
+train acc = 0.7188
+test acc = 0.6813566088676453
 
 ##############################################################################
 ##############################################################################
@@ -122,9 +122,9 @@ model.add(Flatten())
 model.add(Dense(256, activation='relu'))
 model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
-epochs = 100
-train acc = 
-test acc = 
+epochs = 100 (stoped at 50)
+train acc = 0.6875
+test acc = 0.5564923286437988
 
 ##############################################################################
 ##############################################################################
@@ -147,7 +147,7 @@ model.add(Flatten())
 model.add(Dense(256, activation='relu'))
 model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
-epochs = 100
-train acc = 
-test acc = 
+epochs = 100 (stoped at 60)
+train acc = 0.6719
+test acc = 0.6582359075546265
 
