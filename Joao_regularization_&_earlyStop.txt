@@ -2,7 +2,7 @@
 ##############################################################################
 ##############################################################################
 main.py
-Submitted batch job 6857529
+Submitted batch job 6858251
 model = Sequential()
 model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -27,7 +27,7 @@ test acc =
 ##############################################################################
 ##############################################################################
 main1.py
-Submitted batch job 6857530
+Submitted batch job 
 model = Sequential()
 model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -52,7 +52,7 @@ test acc =
 ##############################################################################
 ##############################################################################
 main2.py
-Submitted batch job 6857531
+Submitted batch job 
 model = Sequential()
 model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -78,7 +78,7 @@ test acc =
 ##############################################################################
 ##############################################################################
 main3.py
-Submitted batch job 6857532
+Submitted batch job 
 model = Sequential()
 model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -104,7 +104,7 @@ test acc =
 ##############################################################################
 ##############################################################################
 main4.py
-Submitted batch job 6857533
+Submitted batch job 
 model = Sequential()
 model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -130,7 +130,7 @@ test acc =
 ##############################################################################
 ##############################################################################
 main5.py
-Submitted batch job 6857534
+Submitted batch job 
 model = Sequential()
 model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
