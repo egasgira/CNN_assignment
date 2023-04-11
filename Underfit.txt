@@ -1,0 +1,22 @@
+Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 254, 254, 8)       224       
+                                                                 
+ max_pooling2d (MaxPooling2D  (None, 127, 127, 8)      0         
+ )                                                               
+                                                                 
+ conv2d_1 (Conv2D)           (None, 42, 42, 16)        1168      
+                                                                 
+ max_pooling2d_1 (MaxPooling  (None, 21, 21, 16)       0         
+ 2D)                                                             
+                                                                 
+ flatten (Flatten)           (None, 7056)              0         
+                                                                 
+ dense (Dense)               (None, 8)                 56456     
+                                                                 
+ dense_1 (Dense)             (None, 29)                261       
+                                                                 
+=================================================================
+Total params: 58,109
+Trainable params: 58,109
+Non-trainable params: 0
