@@ -27,7 +27,7 @@ test acc = 0.6956632733345032
 ##############################################################################
 ##############################################################################
 main1.py
-Submitted batch job 
+Submitted batch job 6858551
 model = Sequential()
 model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -52,7 +52,7 @@ test acc =
 ##############################################################################
 ##############################################################################
 main2.py
-Submitted batch job 
+Submitted batch job 6858552
 model = Sequential()
 model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -78,7 +78,7 @@ test acc =
 ##############################################################################
 ##############################################################################
 main3.py
-Submitted batch job 
+Submitted batch job 6858553
 model = Sequential()
 model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -104,7 +104,7 @@ test acc =
 ##############################################################################
 ##############################################################################
 main4.py
-Submitted batch job 
+Submitted batch job 6858556
 model = Sequential()
 model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -130,7 +130,7 @@ test acc =
 ##############################################################################
 ##############################################################################
 main5.py
-Submitted batch job 
+Submitted batch job 6858557
 model = Sequential()
 model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
 model.add(MaxPooling2D(pool_size=(2, 2)))
