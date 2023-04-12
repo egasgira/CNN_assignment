@@ -21,9 +21,11 @@ model.add(Flatten())
 model.add(Dense(256, activation='relu'))
 model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
-epochs = 100 (stoped at )
-train acc = 
-test acc =
+epochs = 50 (stoped at 9)
+train acc = 0.74
+val acc = 0.65
+test acc = 0.64
+test f1 = 0.63
 
 ##############################################################################
 ##############################################################################
@@ -48,9 +50,11 @@ model.add(Flatten())
 model.add(Dense(256, activation='relu'))
 model.add(Dense(len(Y_data_train[0]), activation=(tf.nn.softmax)))#.shape[1]
 
-epochs = 100 (stoped at )
-train acc = 
-test acc = 
+epochs = 50 (stoped at 12)
+train acc = 0.81
+val acc = 0.68
+test acc = 0.65
+test f1 = 0.64
 
 ##############################################################################
 ##############################################################################
