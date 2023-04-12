@@ -2,7 +2,7 @@
 ##############################################################################
 ##############################################################################
 KERNEL 3X3
-STRIDE 1X1
+STRIDE 1
 Submitted batch job 
 model = Sequential()
 model.add(Conv2D(16, (3, 3), activation='relu', input_shape=input_shape, padding = "same"))
@@ -29,7 +29,7 @@ test acc =
 ##############################################################################
 ##############################################################################
 KERNEL 3X3
-STRIDE 2X2
+STRIDE 2
 Submitted batch job 
 model = Sequential()
 model.add(Conv2D(16, (3, 3), (2, 2), activation='relu', input_shape=input_shape, padding = "same"))
